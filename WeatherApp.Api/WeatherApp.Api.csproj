@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Weather-Data\" />
+    <Folder Include="weather-data\" />
   </ItemGroup>
 
 </Project>

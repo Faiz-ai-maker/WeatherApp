@@ -7,18 +7,20 @@ namespace WeatherApp.Api.Controllers;
 [Route("api/test")]
 public class TestController : ControllerBase
 {
-    private readonly IDateParserService _dateParser;
+    private readonly IOpenMeteoService _weatherService;
 
-    public TestController(IDateParserService dateParser)
+    public TestController(
+        IOpenMeteoService weatherService)
     {
-        _dateParser = dateParser;
+        _weatherService = weatherService;
     }
 
     [HttpGet]
-    public IActionResult Get()
+    public async Task<IActionResult> Get()
     {
         var result =
-            _dateParser.Parse("June 2");
+            await _weatherService.GetWeatherAsync(
+                new DateTime(2021, 2, 27));
 
         return Ok(result);
     }

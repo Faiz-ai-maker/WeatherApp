@@ -10,6 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IDateParserService,DateParserService>();
+builder.Services.AddSingleton<IJsonStorageService,JsonStorageService>();
+builder.Services.AddHttpClient<IOpenMeteoService,OpenMeteoService>();
 
 var app = builder.Build();
 
