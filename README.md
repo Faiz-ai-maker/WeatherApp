@@ -11,7 +11,5 @@ This application fetches historical weather data from the Open-Meteo API and dis
 5. Exposes `GET /api/weather` endpoint
 
 ### Run Backend
-
-bash
 dotnet restore
 dotnet run
